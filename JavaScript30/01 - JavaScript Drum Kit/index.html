@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
   <link rel="stylesheet" href="style.css">
+  <script src="drum_kit.js"></script>
 </head>
 
 <body>
@@ -79,7 +80,7 @@
       }
        //
        function transitionend(e) {
-        if (e.propertyName === 'transform') {
+        if (e.propertyName == 'transform') {
           e.currentTarget.classList.remove('playing')
         }
       }
