@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
   <link rel="stylesheet" href="style.css">
-  <script src="drum_kit.js"></script>
+  
 </head>
 
 <body>
@@ -60,42 +60,9 @@
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
-  <script>
-    (function () {
+ 
 
-  
-      function star(e) {
-        // play music
-        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
-        if (audio) {
-          audio.currentTime = 0
-          audio.play();
-        }
-        //dom style
-        const dom = document.querySelector(`div[data-key="${e.keyCode}"]`)
-        if (dom) {
-          dom.classList.add('playing')
-        }
-
-      }
-       //
-       function transitionend(e) {
-        if (e.propertyName == 'transform') {
-          e.currentTarget.classList.remove('playing')
-        }
-      }
-      
-      window.addEventListener('keydown', star)
-       document.querySelectorAll('.key').forEach(function (key) {
-        key.addEventListener('transitionend', transitionend)
-      })
-
-     
-
-    })()
-  </script>
-
-
+  <script src="drum_kit.js"></script>
 </body>
 
 </html>
